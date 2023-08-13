@@ -107,7 +107,7 @@ export function FileChat() {
           const words = stringWithoutUrls.split(/\s+/);
           console.log(words.length);
 
-          if (words.length < 2400) {
+          if (words.length < 2600) {
             setApproved(true);
           } else {
             setApproved(false);
@@ -178,17 +178,32 @@ export function FileChat() {
   };
 
   return (
-    <div className="flex h-full flex-col justify-between rounded-2xl border-zinc-200 lg:border lg:px-10 lg:py-4">
+    <div className="flex h-full flex-col justify-between rounded-2xl border-zinc-200 py-8 lg:border lg:px-10">
       {!approved && (
-        <div className="p-32">
-          <input type="file" onChange={handleFileChange} />
+        <div className="flex h-full flex-col items-center justify-center gap-8 lg:p-32 ">
+          <label
+            className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+            htmlFor="file_input"
+          >
+            Upload file
+          </label>
+          <input
+            className="block cursor-pointer overflow-x-hidden rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
+            aria-describedby="file_input_help"
+            id="file_input"
+            type="file"
+            onChange={handleFileChange}
+          />
+          <p className="mt-1 text-sm " id="file_input_help">
+            *.pdf, *.docx, *.ppt, *.xlsx or *.odt (MAX - 4mb).
+          </p>
           <button
-            disabled={converting}
+            disabled={converting || file == null}
             className={`${
-              converting
+              converting || file == null
                 ? "cursor-not-allowed border-gray-200 bg-gray-100"
                 : "border border-gray-200 bg-white text-black hover:bg-gray-50"
-            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
+            } flex h-10 w-1/3 items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
             onClick={handleConvert}
           >
             {converting ? (
@@ -198,10 +213,12 @@ export function FileChat() {
                 <p>Upload</p>
               </>
             )}
-          </button>{" "}
-          <div className="w-96  flex-grow">
-            <p>Not approved</p>
-          </div>
+          </button>
+          {!converting && !approved && text && (
+            <p className="rounded-md bg-red-200 p-2 text-center text-red-600">
+              Not approved
+            </p>
+          )}
         </div>
       )}
       {approved && (

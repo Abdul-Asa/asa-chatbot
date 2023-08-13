@@ -18,7 +18,7 @@ export default async function Home() {
           className=" mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-gray-600 px-7 py-2 transition-colors hover:bg-gray-900"
         >
           <Github className="h-5 w-5 " />
-          <p className="text-sm font-semibold text-white">
+          <p className="text-xs font-semibold text-white md:text-sm">
             {" Don't forget to leave a star on Github"}
           </p>
         </a>
@@ -33,10 +33,11 @@ export default async function Home() {
           style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
         >
           <Balancer>
-            A GPT-3 powered chatbot. Your own personal AI assistant
+            A GPT-3 powered chatbot. Your own personal AI assistant. Chat with
+            .pdfs and .docx files too
           </Balancer>
         </p>
-        <div className="mx-auto mt-6 flex items-center justify-center space-x-5">
+        <div className="mx-auto mt-6 flex flex-col items-center justify-center gap-4 space-x-5 md:flex-row">
           <CTA session={session} />
           <a
             className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"

@@ -120,7 +120,7 @@ export function Chat() {
   };
 
   return (
-    <div className="flex h-full flex-col justify-between rounded-2xl border-zinc-200 lg:border lg:px-10 lg:py-4">
+    <div className="flex h-full flex-col justify-between rounded-2xl border-zinc-200 py-8 lg:border lg:px-10">
       <div className=" overflow-scroll">
         {messages.map(({ content, role }, index) => (
           <ChatLine key={index} role={role} content={content} />

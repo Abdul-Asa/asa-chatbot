@@ -7,12 +7,13 @@ import { Suspense } from "react";
 
 export const metadata = {
   title: "🤖 ASA-chatbot",
-  description: "A GPT-3 powered chatbot. Your own personal AI assistant",
+  description:
+    "A GPT-3 powered chatbot that chats with pdf and othe files. Your own personal AI assistant",
   twitter: {
     card: "summary_large_image",
-    title: "A GPT-3 powered chatbot. Your own personal AI assistant",
+    title: "🤖 ASA-chatbot",
     description: "A GPT-3 powered chatbot. Your own personal AI assistant",
-    creator: "@steventey",
+    creator: "@AbdullahShehu1",
   },
   metadataBase: new URL("https://asa-chatbot.vercel.app/"),
   themeColor: "#FFF",
