@@ -6,7 +6,7 @@ import Nav from "@/components/layout/nav";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "ASA-chatbot",
+  title: "🤖 ASA-chatbot",
   description: "A GPT-3 powered chatbot. Your own personal AI assistant",
   twitter: {
     card: "summary_large_image",
