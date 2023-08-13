@@ -3,7 +3,7 @@ import { Github } from "@/components/shared/icons";
 import Footer from "@/components/layout/footer";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
-import CTA from "../components/home/home-button";
+import CTA from "../components/layout/home-button";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -12,7 +12,7 @@ export default async function Home() {
     <div className=" mx-auto flex h-screen w-full flex-col justify-between pt-32">
       <section className="">
         <a
-          href="https://github.com/Abdul-asa"
+          href="https://github.com/Abdul-Asa/asa-chatbot"
           target="_blank"
           rel="noreferrer"
           className=" mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-gray-600 px-7 py-2 transition-colors hover:bg-gray-900"

@@ -2,7 +2,7 @@
 import { ImageResponse } from "next/server";
 
 export const runtime = "edge";
-export const alt = "Precedent - Building blocks for your Next.js project";
+export const alt = "A GPT-3 powered chatbot. Your own personal AI assistant";
 export const contentType = "image/png";
 
 export default async function OG() {
@@ -42,7 +42,7 @@ export default async function OG() {
             letterSpacing: "-0.02em",
           }}
         >
-          Precedent
+          ASA chatbot
         </h1>
       </div>
     ),

@@ -1,7 +1,7 @@
 "use client";
 
 import { Sign } from "crypto";
-import { useSignInModal } from "../layout/sign-in-modal";
+import { useSignInModal } from "./sign-in-modal";
 
 export default function CTA({ session }: any) {
   const { SignInModal, setShowSignInModal } = useSignInModal();

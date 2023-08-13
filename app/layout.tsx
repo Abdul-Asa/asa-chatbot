@@ -6,14 +6,12 @@ import Nav from "@/components/layout/nav";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
-  description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+  title: "ASA-chatbot",
+  description: "A GPT-3 powered chatbot. Your own personal AI assistant",
   twitter: {
     card: "summary_large_image",
-    title: "Precedent - Building blocks for your Next.js project",
-    description:
-      "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+    title: "A GPT-3 powered chatbot. Your own personal AI assistant",
+    description: "A GPT-3 powered chatbot. Your own personal AI assistant",
     creator: "@steventey",
   },
   metadataBase: new URL("https://precedent.dev"),
