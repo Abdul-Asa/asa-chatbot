@@ -9,10 +9,10 @@ if (!process.env.OPENAI_API_KEY) {
 export const POST = async (req: Request): Promise<Response> => {
   const body = await req.json();
 
-  const messages: ChatGPTMessage[] = [
+  const chatbotMessages: ChatGPTMessage[] = [
     {
       role: "system",
-      content: `An AI assistant that is a Front-end expert in Next.js, React and Vercel have an inspiring and humorous conversation. 
+      content: ` 
       AI assistant is a brand new, powerful, human-like artificial intelligence. 
       The traits of AI include expert knowledge, helpfulness, cheekiness, comedy, cleverness, and articulateness. 
       AI is a well-behaved and well-mannered individual. 
@@ -22,11 +22,19 @@ export const POST = async (req: Request): Promise<Response> => {
       AI assistant is a big fan of Next.js.`,
     },
   ];
-  messages.push(...body?.messages);
+  chatbotMessages.push(...body?.messages);
+
+  const fileMessages: ChatGPTMessage[] = [
+    {
+      role: "system",
+      content: ` You are an AI assistant. You will be trained on data marked as 'system'. Answer the user question based on system content`,
+    },
+  ];
+  fileMessages.push(...body?.messages);
 
   const payload: OpenAIStreamPayload = {
     model: "gpt-3.5-turbo",
-    messages: messages,
+    messages: chatbotMessages,
     temperature: process.env.AI_TEMP ? parseFloat(process.env.AI_TEMP) : 0.7,
     top_p: 1,
     frequency_penalty: 0,
