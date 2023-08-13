@@ -14,7 +14,7 @@ export const metadata = {
     description: "A GPT-3 powered chatbot. Your own personal AI assistant",
     creator: "@steventey",
   },
-  metadataBase: new URL("https://precedent.dev"),
+  metadataBase: new URL("https://asa-chatbot.vercel.app/"),
   themeColor: "#FFF",
 };
 
