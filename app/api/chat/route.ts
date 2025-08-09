@@ -20,8 +20,5 @@ export async function POST(req: Request) {
   });
 
   // send sources and reasoning back to the client
-  return result.toUIMessageStreamResponse({
-    sendSources: true,
-    sendReasoning: true,
-  });
+  return result.toUIMessageStreamResponse();
 }
