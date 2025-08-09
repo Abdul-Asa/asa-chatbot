@@ -1,18 +1,37 @@
-export default function Footer() {
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+
+export function Footer() {
   return (
-    <div className=" w-full border-t border-gray-200 bg-white py-5 text-center">
-      <p className="text-gray-500">
-        Made with ❤️ by{" "}
-        <a
-          className="font-medium text-gray-800 underline transition-colors"
-          href="https://github.com/Abdul-Asa"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          Abdullah Shehu
-        </a>
-      </p>
-    </div>
+    <footer className="border-t border-border bg-muted/30">
+      <div className="container mx-auto p-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <Image
+              src="/isocon/logo.svg"
+              alt="ASA Chatbot"
+              width={24}
+              height={24}
+            />
+            <span className="font-mono font-semibold">ASA Chatbot</span>
+          </div>
+
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            Made with{" "}
+            <Image src="/isocon/heart.svg" alt="Heart" width={16} height={16} />
+            by{" "}
+            <Link
+              href="https://asa-dev.vercel.app"
+              target="_blank"
+              className="text-primary hover:underline font-medium"
+            >
+              Shehu
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }

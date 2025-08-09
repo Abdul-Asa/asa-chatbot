@@ -1,39 +1,36 @@
+import type { Metadata } from "next";
+import { Doto, Instrument_Sans } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import cx from "classnames";
-import { sfPro, inter } from "../components/fonts/index";
-import Nav from "@/components/layout/nav";
-import { Suspense } from "react";
+import { ThemeProvider } from "@/components/theme-provider";
 
-export const metadata = {
-  title: "🤖 ASA-chatbot",
-  description:
-    "A GPT-3 powered chatbot that chats with pdf and othe files. Your own personal AI assistant",
-  twitter: {
-    card: "summary_large_image",
-    title: "🤖 ASA-chatbot",
-    description: "A GPT-3 powered chatbot. Your own personal AI assistant",
-    creator: "@AbdullahShehu1",
-  },
-  metadataBase: new URL("https://asa-chatbot.vercel.app/"),
-  themeColor: "#FFF",
+const doto = Doto({
+  variable: "--font-doto",
+  subsets: ["latin"],
+});
+
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "PDF Chatbot",
+  description: "Chat with PDFs using AI - Dark and minimalist design",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
-      <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed -z-10 h-screen w-full bg-gradient-to-br from-indigo-200 via-white to-blue-100" />
-        <Suspense fallback="...">
-          {/* @ts-expect-error Server Component */}
-          <Nav />
-        </Suspense>
-        <main className="w-full">{children}</main>
-        <Analytics />
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${doto.variable} ${instrumentSans.variable} antialiased font-sans`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
